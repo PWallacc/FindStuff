@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/linear_layout_top"
+        android:layout_width="fill_parent"
+	    android:layout_height="35dp"
+	    android:orientation="horizontal" 
+	    android:weightSum="1.0">
+	    
+        
+	    <AutoCompleteTextView
+	        android:id="@+id/searchEditText"
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content" 
+	        android:layout_weight="1.0"
+	        android:hint="@string/search">
+	 
+	        <requestFocus />
+	 
+	    </AutoCompleteTextView>
+	
+	</LinearLayout>
+	
+    <LinearLayout
+        android:id="@+id/linear_layout_second"
+        android:layout_width="fill_parent"
+	    android:layout_height="35dp"
+	    android:orientation="horizontal" 
+	    android:layout_below="@+id/linear_layout_top"
+	    android:weightSum="1.0">
+	    
+	 	<Spinner
+	        android:id="@+id/categorySpinner"
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content"
+	        android:layout_weight=".40"
+	        android:entries="@array/category_array"
+	        android:prompt="@string/hello_world">
+	    </Spinner>	 
+	    	
+    	<Spinner
+	        android:id="@+id/subCategorySpinner"
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content"
+	        android:layout_weight=".60"
+	        android:entries="@array/category_array"
+	        android:prompt="@string/hello_world">
+	    </Spinner>	 	
+	 </LinearLayout>
+	 
+     <LinearLayout
+        android:id="@+id/linear_layout_third"
+        android:layout_width="fill_parent"
+	    android:layout_height="35dp"
+	    android:orientation="horizontal" 
+	    android:layout_below="@+id/linear_layout_second"
+	    android:weightSum="1.0">
+	    
+	 	<Spinner
+	        android:id="@+id/countrySpinner"
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content"
+	        android:layout_weight=".40"
+	        android:entries="@array/category_array"
+	        android:prompt="@string/hello_world">
+	    </Spinner>	 
+	    	
+    	<Spinner
+	        android:id="@+id/stateSpinner"
+	        android:layout_width="0dp"
+	        android:layout_height="wrap_content"
+	        android:layout_weight=".60"
+	        android:entries="@array/category_array"
+	        android:prompt="@string/hello_world">
+	    </Spinner>	 	
+	 </LinearLayout>
+    
+	<LinearLayout 
+       android:id="@+id/linear_layout_fourth"
+        android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal" 
+	    android:gravity="center_horizontal"
+	    android:layout_below="@+id/linear_layout_third"
+	    android:weightSum="1.0">
+	 	
+		<Button 
+		    android:id="@+id/button_send"
+	        android:layout_width="0dp"
+	        android:layout_height="40dp"
+	        android:layout_weight=".45"
+	        android:text="@string/search">
+		</Button>
+		<Button 
+		    android:id="@+id/button_save_send"
+	        android:layout_width="0dp"
+	        android:layout_height="40dp"
+	        android:layout_weight=".45"
+	        android:text="@string/save_and_search">
+		</Button>
+	</LinearLayout>
+    
+	<TextView
+        android:id="@+id/saved_search_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:layout_below="@id/linear_layout_fourth"
+        android:text="@string/saved_searches_title" >
+	</TextView>
+	
+	<ListView
+        android:id="@+id/saved_search_list"
+        android:layout_below="@id/saved_search_title"
+        android:layout_height="175dp"
+        android:layout_width="match_parent"
+        android:fadeScrollbars="false" >
+    </ListView>
+
+</RelativeLayout>
+
+
